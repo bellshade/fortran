@@ -14,7 +14,7 @@ contains
     !! yang dimana nilainya bilangan real
     real, dimension(:), intent(inout) :: collection
     !! variabel integer untuk iterasi
-    integer :: i, j collection_size
+    integer :: i, j, collection_size
     !! variabel sementara untuk save yang nantinya
     !! nilai yang akan ditukarkan
     real :: temp
