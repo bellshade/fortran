@@ -2,15 +2,15 @@ cmake_minimum_required(VERSION 3.16)
 project(bellshadeFortran LANGUAGES Fortran)
 
 add_compile_options(
-  -Wall
-  -Wextra
-  -Wpedantic
-  -Waliasing
-  -Wconversion-extra
-  -Wimplicit-interface
-  -Wimplcit-procedure
-  -Wsuprising
-  -Werror
+    -Wall
+    -Wextra
+    -Wpedantic
+    -Waliasing
+    -Wconversion-extra
+    -Wimplicit-interface
+    -Wimplicit-procedure
+    -Wsurprising
+    -Werror
 )
 
 function(source_fortran DIR SOURCES)
