@@ -1,0 +1,37 @@
+name: fortranci
+
+on: [push, pull_request]
+
+env:
+  build_path: ${{github.workspace}}/build
+
+jobs:
+  build_and_testing:
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04]
+
+    steps:
+      - name: checkout kode
+        uses: actions/checkout@v4
+
+      - name: buat direktori build
+        run: cmake -E make_directory ${{env.build_path}}
+      
+      - name: konfigurasi cmake
+        working-directory: ${{env.build_path}}
+        run: cmake ../
+
+      - name: build path
+        working-directory: ${{env.build_path}}
+        run: cmake --build .
+
+      - name: testing
+        working-directory: ${{env.build_path}}
+        run: ctest
+
+      - name: jalankan testing contoh
+        working-directory: ${{env.build_path}}
+        run: make jalankan_semua_contoh
