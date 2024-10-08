@@ -2,7 +2,7 @@
 
 program contoh_bubble_sort_rekursif
   use bubble_sort_module
-  implict none
+  implicit none
 
   real:: array(5)
   call random_number(array)
